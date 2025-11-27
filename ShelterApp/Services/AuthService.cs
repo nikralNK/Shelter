@@ -71,5 +71,11 @@ namespace ShelterApp.Services
         {
             SessionManager.CurrentUser = null;
         }
+
+        public void ResetPassword(string username, string newPassword)
+        {
+            var passwordHash = HashPassword(newPassword);
+            userRepository.UpdatePassword(username, passwordHash);
+        }
     }
 }

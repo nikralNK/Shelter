@@ -32,5 +32,5 @@ INSERT INTO Medical_Record (Id_Animal, Id_Veterinarian, DateOfInspection, Diagno
 (3, 1, '2024-02-01', 'Небольшая травма лапы', 'Обработка раны, покой');
 
 INSERT INTO Users (Username, PasswordHash, Email, FullName, Role, Id_Guardian) VALUES
-('admin', '$2a$11$vKz7Xqh5pTQ2eRfCpGJdfe8k1M.Nz9MXqP2rB0YxZ6P3L8zV4Wc7a', 'admin@shelter.com', 'Администратор', 'Admin', NULL),
-('user1', '$2a$11$vKz7Xqh5pTQ2eRfCpGJdfe8k1M.Nz9MXqP2rB0YxZ6P3L8zV4Wc7a', 'user1@example.com', 'Смирнов Алексей', 'User', 1);
+('admin', '$2a$11$7oKJ8hP5N0Y4UQzXJh4Hf.LZWpLJCc2qYxH8sK6rP9mN4vT2wE8yO', 'admin@shelter.com', 'Администратор', 'Admin', NULL),
+('user1', '$2a$11$7oKJ8hP5N0Y4UQzXJh4Hf.LZWpLJCc2qYxH8sK6rP9mN4vT2wE8yO', 'user1@example.com', 'Смирнов Алексей', 'User', 1);

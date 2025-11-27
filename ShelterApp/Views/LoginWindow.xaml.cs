@@ -1,3 +1,4 @@
+using System;
 using System.Windows;
 using ShelterApp.Services;
 
@@ -45,6 +46,22 @@ namespace ShelterApp.Views
         {
             var registerWindow = new RegisterWindow();
             registerWindow.ShowDialog();
+        }
+
+        private void ResetAdminPassword_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                authService.ResetPassword("admin", "admin");
+                authService.ResetPassword("user1", "user1");
+                MessageBox.Show("Пароли сброшены!\nadmin:admin\nuser1:user1", "Успех",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
