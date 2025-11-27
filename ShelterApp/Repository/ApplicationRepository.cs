@@ -8,9 +8,9 @@ namespace ShelterApp.Repository
 {
     public class ApplicationRepository
     {
-        public List<Application> GetByUserId(int userId)
+        public List<Models.Application> GetByUserId(int userId)
         {
-            var applications = new List<Application>();
+            var applications = new List<Models.Application>();
             using (var conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
@@ -34,9 +34,9 @@ namespace ShelterApp.Repository
             return applications;
         }
 
-        public List<Application> GetAll()
+        public List<Models.Application> GetAll()
         {
-            var applications = new List<Application>();
+            var applications = new List<Models.Application>();
             using (var conn = DatabaseConnection.GetConnection())
             {
                 conn.Open();
@@ -52,7 +52,7 @@ namespace ShelterApp.Repository
             return applications;
         }
 
-        public void Add(Application application)
+        public void Add(Models.Application application)
         {
             using (var conn = DatabaseConnection.GetConnection())
             {
@@ -88,9 +88,9 @@ namespace ShelterApp.Repository
             }
         }
 
-        private Application MapToApplication(NpgsqlDataReader reader)
+        private Models.Application MapToApplication(NpgsqlDataReader reader)
         {
-            return new Application
+            return new Models.Application
             {
                 Id = reader.GetInt32(0),
                 IdGuardian = reader.GetInt32(1),

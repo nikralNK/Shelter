@@ -78,7 +78,7 @@ namespace ShelterApp.Views.Pages
 
             int guardianId = guardianRepository.Add(guardian);
 
-            var application = new Application
+            var application = new Models.Application
             {
                 IdGuardian = guardianId,
                 IdAnimal = currentAnimal.Id,

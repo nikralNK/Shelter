@@ -73,7 +73,7 @@ namespace ShelterApp.Views.Pages
         private void ApproveApplication_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            var application = button?.DataContext as Application;
+            var application = button?.DataContext as Models.Application;
 
             if (application != null)
             {
@@ -87,7 +87,7 @@ namespace ShelterApp.Views.Pages
         private void RejectApplication_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            var application = button?.DataContext as Application;
+            var application = button?.DataContext as Models.Application;
 
             if (application != null)
             {
