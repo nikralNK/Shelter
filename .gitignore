@@ -1,0 +1,9 @@
+CLAUDE.md
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.cache
+packages/
+*.log
