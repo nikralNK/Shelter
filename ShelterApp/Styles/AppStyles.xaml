@@ -14,6 +14,7 @@
         <Setter Property="Padding" Value="20,10"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -36,6 +37,7 @@
     <Style x:Key="RoundedTextBox" TargetType="TextBox">
         <Setter Property="Padding" Value="10"/>
         <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
         <Setter Property="BorderBrush" Value="{StaticResource DarkBeige}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
@@ -55,6 +57,7 @@
     <Style x:Key="RoundedPasswordBox" TargetType="PasswordBox">
         <Setter Property="Padding" Value="10"/>
         <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
         <Setter Property="BorderBrush" Value="{StaticResource DarkBeige}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
@@ -86,6 +89,7 @@
     <Style x:Key="PageTitle" TargetType="TextBlock">
         <Setter Property="FontSize" Value="28"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
         <Setter Property="Foreground" Value="{StaticResource TextDark}"/>
         <Setter Property="Margin" Value="0,0,0,20"/>
     </Style>
@@ -93,6 +97,7 @@
     <Style x:Key="SectionTitle" TargetType="TextBlock">
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
         <Setter Property="Foreground" Value="{StaticResource TextDark}"/>
         <Setter Property="Margin" Value="0,10,0,10"/>
     </Style>
