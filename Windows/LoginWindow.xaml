@@ -1,0 +1,57 @@
+<Window x:Class="ShelterApp.Windows.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Вход в систему"
+        Height="400"
+        Width="450"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="{StaticResource BackgroundColor}">
+    <Border Background="White"
+            CornerRadius="10"
+            Margin="30"
+            Padding="30">
+        <StackPanel>
+            <TextBlock Text="Вход в систему"
+                       Style="{StaticResource TitleStyle}"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,30"/>
+
+            <TextBlock Text="Логин:"
+                       Style="{StaticResource LabelStyle}"/>
+            <TextBox x:Name="UsernameTextBox"
+                     Style="{StaticResource TextBoxStyle}"/>
+
+            <TextBlock Text="Пароль:"
+                       Style="{StaticResource LabelStyle}"
+                       Margin="0,15,0,0"/>
+            <PasswordBox x:Name="PasswordBox"
+                         FontFamily="Segoe UI"
+                         FontSize="14"
+                         Padding="8"
+                         Margin="5"
+                         BorderBrush="{StaticResource AccentColor}"
+                         BorderThickness="1"/>
+
+            <TextBlock x:Name="ErrorTextBlock"
+                       Foreground="Red"
+                       FontSize="12"
+                       Margin="5"
+                       TextWrapping="Wrap"
+                       Visibility="Collapsed"/>
+
+            <Button Content="Войти"
+                    Style="{StaticResource ButtonStyle}"
+                    Margin="0,20,0,0"
+                    Padding="20,10"
+                    Click="LoginButton_Click"/>
+
+            <Button Content="Регистрация"
+                    Style="{StaticResource ButtonStyle}"
+                    Background="{StaticResource SecondaryColor}"
+                    Margin="0,10,0,0"
+                    Padding="20,10"
+                    Click="RegisterButton_Click"/>
+        </StackPanel>
+    </Border>
+</Window>
