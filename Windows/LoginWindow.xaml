@@ -2,16 +2,17 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Вход в систему"
-        Height="400"
+        Height="500"
         Width="450"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Background="{StaticResource BackgroundColor}">
-    <Border Background="White"
-            CornerRadius="10"
-            Margin="30"
-            Padding="30">
-        <StackPanel>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Border Background="White"
+                CornerRadius="10"
+                Margin="30"
+                Padding="30">
+            <StackPanel>
             <TextBlock Text="Вход в систему"
                        Style="{StaticResource TitleStyle}"
                        HorizontalAlignment="Center"
@@ -52,6 +53,7 @@
                     Margin="0,10,0,0"
                     Padding="20,10"
                     Click="RegisterButton_Click"/>
-        </StackPanel>
-    </Border>
+            </StackPanel>
+        </Border>
+    </ScrollViewer>
 </Window>
