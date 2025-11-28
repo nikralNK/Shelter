@@ -46,5 +46,21 @@ namespace ShelterApp.Windows
             var registerWindow = new RegisterWindow();
             registerWindow.ShowDialog();
         }
+
+        private void ResetPasswords_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                authService.ResetPassword("admin", "admin");
+                authService.ResetPassword("user1", "user1");
+                MessageBox.Show("Пароли успешно сброшены!\n\nТеперь можете войти:\nadmin / admin\nuser1 / user1",
+                    "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show($"Ошибка сброса паролей:\n{ex.Message}\n\nУбедитесь, что база данных создана и пользователи admin и user1 существуют.",
+                    "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
 }

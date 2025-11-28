@@ -87,5 +87,20 @@ namespace ShelterApp.Repositories
                 }
             }
         }
+
+        public void UpdatePassword(string username, string passwordHash)
+        {
+            using (var conn = DatabaseConnection.GetConnection())
+            {
+                conn.Open();
+                var query = "UPDATE Users SET PasswordHash = @passwordHash WHERE Username = @username";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@passwordHash", passwordHash);
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
