@@ -12,31 +12,58 @@ namespace ShelterApp.Pages
         public CatalogPage()
         {
             InitializeComponent();
-            animalRepository = new AnimalRepository();
-            LoadAnimals();
+            try
+            {
+                animalRepository = new AnimalRepository();
+                LoadAnimals();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show($"Ошибка подключения к базе данных:\n{ex.Message}\n\nУбедитесь, что PostgreSQL запущен и база данных создана.",
+                    "Ошибка подключения", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void LoadAnimals()
         {
-            var animals = animalRepository.GetAll();
-            AnimalsItemsControl.ItemsSource = animals;
+            try
+            {
+                var animals = animalRepository.GetAll();
+                AnimalsItemsControl.ItemsSource = animals;
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки данных:\n{ex.Message}",
+                    "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void Filter_Changed(object sender, SelectionChangedEventArgs e)
         {
-            if (TypeComboBox == null || GenderComboBox == null || SizeComboBox == null)
+            if (TypeComboBox == null || GenderComboBox == null || SizeComboBox == null || animalRepository == null)
                 return;
 
-            var type = (TypeComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
-            var gender = (GenderComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
-            var size = (SizeComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
+            try
+            {
+                var type = (TypeComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
+                var gender = (GenderComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
+                var size = (SizeComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
 
-            var animals = animalRepository.GetFiltered(type, gender, size);
-            AnimalsItemsControl.ItemsSource = animals;
+                var animals = animalRepository.GetFiltered(type, gender, size);
+                AnimalsItemsControl.ItemsSource = animals;
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show($"Ошибка фильтрации:\n{ex.Message}",
+                    "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void ResetFilter_Click(object sender, RoutedEventArgs e)
         {
+            if (animalRepository == null)
+                return;
+
             TypeComboBox.SelectedIndex = 0;
             GenderComboBox.SelectedIndex = 0;
             SizeComboBox.SelectedIndex = 0;
