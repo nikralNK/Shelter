@@ -1,0 +1,19 @@
+<Window x:Class="ShelterApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Приют для животных" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Height="50" Background="#6B8E6F">
+            <Button x:Name="BackButton" Content="Назад" Width="100" Height="30" Margin="10" Click="BackButton_Click"/>
+            <TextBlock Text="Приют для животных" FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" Margin="20,0,0,0"/>
+        </StackPanel>
+
+        <Frame Grid.Row="1" x:Name="MainFrame" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"/>
+    </Grid>
+</Window>
